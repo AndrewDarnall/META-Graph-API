@@ -41,13 +41,13 @@ class Scraper:
                 self.txt.logText(post['text'][:100])
             self.jsn.loadJson(post)
 
-            if post['image'] != None:
+            if post['image'] != None and len(post['image']) != 0 and post['image'][0] != None:
                 self.img.download(post['image'])
-            elif post['image_lowquality'] != None:
+            elif post['image_lowquality'] != None and len(post['image_lowquality']) != 0 and post['image_lowquality'][0] != None:
                 self.img.download(post['image_lowquality'])
-            elif post['images'] != None:
+            elif post['images'] != None and len(post['images']) != 0 and post['images'][0] != None:
                 self.img.download(post['images'])
-            elif post['images_lowquality'] != None:
+            elif post['images_lowquality'] != None and len(post['images_lowquality']) != 0 and post['images_lowquality'][0] != None:
                 self.img.download(post['images_lowquality'])
 
             if post['links'] != None:
