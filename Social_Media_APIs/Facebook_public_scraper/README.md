@@ -15,6 +15,8 @@ password
 
 # Usage
 
+- To run -> python3 fb_scraper.py 'targets_file.txt'
+
 The scraper needs to have a text file as input with the names of all of the public pages that you intend to scrape, however I included a trial.py script which
 tests wether the scraper will actually scrape information from the page or not,
 this is done to avoid wasting the allocating of directories (and having to delete them afterwards).
