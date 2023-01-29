@@ -3,6 +3,10 @@
 This program was written purely for accademic purposes, I do not endorse stealing
 data from Social Media platforms without their explicit consent (i.e. API access).
 
+# Dependencies
+
+- requests
+
 # Final Notes of the scraper
 
 A more ambitious project would be to scrape any page I saught to scrape
