@@ -30,6 +30,8 @@ you will see one line scraped from the page, otherwise it will terminate with a
 message that claims that the page was scraped nut nothing else will have been
 printed to stdout.
 
+### It might not work while collecting infromation from public pages as well
+
 Upon succesful scraping of the public page, you will find within the work. dir.
 where the program was summoned a directory with the upper case name of the scraped
 page, two sub directories, IMG and JSON and an additional two text files, one for
