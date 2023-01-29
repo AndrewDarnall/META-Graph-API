@@ -37,7 +37,8 @@ class Scraper:
 
         for post in get_posts(self.fileName, pages=20, options={'progress':True}):
             self.num += 1
-            self.txt.logText(post['text'][:100])
+            if post['text'] != None:
+                self.txt.logText(post['text'][:100])
             self.jsn.loadJson(post)
 
             if post['image'] != None:
