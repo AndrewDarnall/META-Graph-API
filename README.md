@@ -1,2 +1,3 @@
-# Social-Media-Data-Analytics
-Repository for the Social Media Data Analytics course - fall 2022
+# Social Media Data Analytics - Projects
+
+Each directory is a project of the course, in there you will find detailed documentation explaining the projects
