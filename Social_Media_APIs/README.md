@@ -20,17 +20,17 @@ Additionally, I have conducted a basic sentiment analysis on the collected posts
 ## Directory Structure
 
 ```bash
-+---Social-Media-APIs/
+Social-Media-APIs/
+|
+|--requirements.txt
+|
+|--facebook_public_scraper/
 |   |
-|   |   requirements.txt
+|   |--main.py
 |   |
-|   \---facebook_public_scraper/
-|       |
-|       |   main.py
-|       |
-|       |   scraper.py
-|       |
-|       |   utils.py
+|   |--scraper.py
+|   |
+|   |--utils.py
 |
 |
 \---Meta_Graph_API_tutorial
