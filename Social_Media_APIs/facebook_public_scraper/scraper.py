@@ -1,18 +1,18 @@
-# The Facebook public scraper ~ By TheComputerScientist (Drew)
-
-# https://github.com/kevinzg/facebook-scraper
 from facebook_scraper import get_posts
-import jsonDowmloader
-import imageDownloader
-import textLogger
-import linkManager
+from utils import TextLogger
+from utils import LinkManager
+from utils import JsonFormatter
+from utils import ImgDownloader
 import os
-import sys
-import re
 
+"""
+    Scraper driver object
+
+    @method scrape : a wrapper which uses the methods defined in the utility.py module
+"""
 class Scraper:
 
-    fileName = ""
+    file_name = ""
     txt = None
     img = None
     jsn = None
@@ -21,25 +21,25 @@ class Scraper:
     cwd = None
     path = None
 
-    def __init__(self,fName):
-        self.fileName = fName
+    def __init__(self, f_name):
+        self.file_name = f_name
         self.num = 0
         self.cwd = os.getcwd()
-        upr = self.fileName.upper()
+        upr = self.file_name.upper()
         self.path = os.path.join(self.cwd,upr.strip())
         os.mkdir(self.path)
-        self.txt = textLogger.TextLogger(fName,self.path)
-        self.img = imageDownloader.ImgDownloader(fName,self.path)
-        self.jsn = jsonDowmloader.JsonFormatter(fName,self.path)
-        self.lnk = linkManager.LinkManager(fName,self.path)
+        self.txt = TextLogger(f_name, self.path)
+        self.img = ImgDownloader(f_name, self.path)
+        self.jsn = JsonFormatter(f_name, self.path)
+        self.lnk = LinkManager(f_name, self.path)
 
     def scrape(self):
 
-        for post in get_posts(self.fileName, pages=20, options={'progress':True}):
+        for post in get_posts(self.file_name, pages=20, options={'progress':True}):
             self.num += 1
             if post['text'] != None:
-                self.txt.logText(post['text'][:100])
-            self.jsn.loadJson(post)
+                self.txt.log_text(post['text'][:100])
+            self.jsn.load_json(post)
 
             if post['image'] != None and len(post['image']) != 0 and post['image'][0] != None:
                 self.img.download(post['image'])
@@ -51,14 +51,18 @@ class Scraper:
                 self.img.download(post['images_lowquality'])
 
             if post['links'] != None:
-                self.lnk.loadLink(post['links'][0])
+                self.lnk.load_link(post['links'][0])
 
-        print("Finished scraping page:\t({})".format(self.fileName))
+        print("Finished scraping page:\t({})".format(self.file_name))
         self.txt.finish()
         self.lnk.terminate()
 
 
+"""
+    Facede Object for the Scraper
 
+    @method start_scraper : opens the file of public pages to scrape and scrapes each entry
+"""
 class ScraperManager:
 
     file = None
@@ -66,26 +70,8 @@ class ScraperManager:
     def __init__(self,file):
         self.file = file
 
-    def startScrape(self):
-        fh = open(self.file,"r")
+    def start_scraper(self):
+        fh = open(self.file, "r")
         for line in fh:
             scraper = Scraper(line)
             scraper.scrape()
-            
-
-
-# Main
-if len(sys.argv) != 2:
-    print("Usage:\t<{}>\t<input-file>".format(sys.argv[0]))
-    sys.exit(1)
-
-x = re.search("\.txt", sys.argv[1])
-
-if x:
-    print("Scraping from input file: [{}]".format(sys.argv[1]))
-else:
-    print("Must read from a TEXT file!")
-
-print("Starting Scraper")
-scr = ScraperManager(sys.argv[1])
-scr.startScrape()

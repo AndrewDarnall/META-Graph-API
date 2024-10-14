@@ -1,10 +1,70 @@
-# Social Media APIs
+# META Graph API Scraper
 
-This page has some sample code and a tutorial on social media APIs.
+In the age of Artificial Intelligence and Big Data, social networks represent a valuable source of data, often regarded as a goldmine. This is a key reason why most social media APIs, particularly following the transformative launch of ChatGPT, have been restricted to use by specially authorized individuals.
 
-The social media that I chose to study is -> Facebook
-and the respective API is the - Graph API, used across META social media
-platforms such as Whatsapp, Instagram and Facebook.
+This repository contains my Python implementation of a public data scraper for the META Graph API, specifically designed for the Facebook platform. It is limited to accessing data from public Facebook accounts only.
 
-The API is a marble of moden software engineering and despite the complexity
-and secrecy, it is absolutely worth studying!
+Additionally, I have conducted a basic sentiment analysis on the collected posts and provided a detailed explanation of the API's functionality in a Jupyter notebook.
+
+------
+
+## Dependencies
+
+| Component | Version |
+-----------------------
+| Python    | 3.9     |
+| pip       | 24.0    |
+
+------
+
+## Directory Structure
+
+Social-Media-APIs/
+|
+|-- requirements.txt
+|
+|-- facebook_public_scraper/
+|
+|   |-- main.py
+|
+|   |-- scraper.py
+|
+|   |-- utils.py
+|
+|
+|-- Meta_Graph_API_tutorial
+
+------
+
+## Usage
+
+Clone the repo
+
+```bash
+git clone https://github.com/AndrewDarnall/META-Graph-API-Scraper.git
+cd META-Graph-API-Scraper
+```
+
+Setup the dependencies
+
+```bash
+cd facebook_scraper
+python -m pip install -r requirements.txt
+```
+
+Create a target file with a list of <i><b>public</b></i> facebook pages, usually you would call it `target.txt`
+
+```bash
+touch targets.txt
+echo "NintendoAmerica" >> targets.txt
+```
+
+Run the scraper
+
+```bash
+python main.py targets.txt
+```
+
+Once finished, the scraper will have created in the current working directory `facebook_public_scraper` a directory, written in 
+capital characters, of each scraped public page. <br>
+Each directory contains images, text and raw .json of the scraped page's posts

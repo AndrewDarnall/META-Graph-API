@@ -1,19 +1,21 @@
-# Pacchetto tutorial Meta Graph API ~ Facebook
+# META Graph API Tutorial
 
-- IMGS: risorse per il notebook Jupyter
-- Facebook Graph API.pdf: l'elaborato sull'API studiata
-- manualRequest.sh: script shell per automatizzare la richesta all'API studiato
-- pythonRequest.py: script Python per effettuare la richiesta manuale all'API
-- analisi.ipynb: l'analisi dei dati del Social Media in formato Jupyter Notebook
+The following directory contains a portion of the Social Media Data Analytics course's project which
+consists of studying and presenting a social media API of choice, in this case, the META Graph API.
+<br>
+Along with the tutorial is a Jupyter Notebook with a simple sentiment analysis conducted on the
+gathered public facebook data (scraped data).
+<br>
+<br>
+The entire report is written in italian as it was required at the time during the course.
 
-# Avvertenze
+------
 
-NON ho incluso i dati usati in quanto non so qunato sia lecito farlo, per tanto
-qualora si volesse ri-effettuare l'analisi dei dati, basterebbe usare lo script 
-dello scraper messo a disposizione nella repo, seguendo le istruzioni.
+## Notebook Usage
 
-# Dipendenze
+To run the jupyter notebook, from the root directory of the project, simply run:
 
-- matplotlib
-- vaderSentiment
-- i dati da studiare
+```bash
+cd ./Meta_Graph_API_tutorial
+jupyter-notebook META-sentiment-analysis.ipynb --port==8085
+```
