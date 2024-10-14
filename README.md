@@ -22,7 +22,6 @@ Additionally, I have conducted a basic sentiment analysis on the collected posts
 ```bash
 ├── facebook_public_scraper
 │   ├── main.py
-│   ├── README.md
 │   ├── requirements.txt
 │   ├── scraper.py
 │   └── utils.py
