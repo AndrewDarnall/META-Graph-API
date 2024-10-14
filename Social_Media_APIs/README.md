@@ -19,6 +19,7 @@ Additionally, I have conducted a basic sentiment analysis on the collected posts
 
 ## Directory Structure
 
+```bash
 +---Social-Media-APIs/
 |   |
 |   |   requirements.txt
@@ -33,6 +34,7 @@ Additionally, I have conducted a basic sentiment analysis on the collected posts
 |
 |
 \---Meta_Graph_API_tutorial
+```
 
 ------
 
