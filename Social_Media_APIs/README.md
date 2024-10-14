@@ -11,28 +11,28 @@ Additionally, I have conducted a basic sentiment analysis on the collected posts
 ## Dependencies
 
 | Component | Version |
------------------------
-| Python    | 3.9     |
-| pip       | 24.0    |
+------------|----------
+| Python    | `3.9`   |
+| pip       | `24.0`  |
 
 ------
 
 ## Directory Structure
 
-Social-Media-APIs/
++---Social-Media-APIs/
+|   |
+|   |   requirements.txt
+|   |
+|   \---facebook_public_scraper/
+|       |
+|       |   main.py
+|       |
+|       |   scraper.py
+|       |
+|       |   utils.py
 |
-|-- requirements.txt
 |
-|-- facebook_public_scraper/
-|
-|   |-- main.py
-|
-|   |-- scraper.py
-|
-|   |-- utils.py
-|
-|
-|-- Meta_Graph_API_tutorial
+\---Meta_Graph_API_tutorial
 
 ------
 
